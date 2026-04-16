@@ -49,6 +49,8 @@ html[data-theme="light"] {
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -60,6 +62,8 @@ body {
     linear-gradient(180deg, var(--bg2), var(--bg));
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a {
