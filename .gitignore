@@ -1,0 +1,5 @@
+node_modules/
+.env
+itway-requests.log
+.vercel
+.netlify

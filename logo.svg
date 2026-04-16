@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="itwayMarkBg" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#36F6DC"/>
+      <stop offset="0.5" stop-color="#22c4e8"/>
+      <stop offset="1" stop-color="#1D73FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#itwayMarkBg)"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" stroke="rgba(255,255,255,0.32)" stroke-width="1"/>
+  <g stroke="#061018" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.88">
+    <path d="M15 46 L30 31 L15 16"/>
+    <path d="M26 46 L41 31 L26 16"/>
+  </g>
+  <circle cx="47" cy="19" r="5.5" fill="rgba(255,255,255,0.95)"/>
+</svg>

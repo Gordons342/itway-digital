@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ITWAY — розробка сайтів, програмування, консалтинг, автоматизація та AI-інструменти для бізнесу."
+    />
+    <title>ITWAY — IT рішення для бізнесу</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container inner">
+        <a href="#top" class="brand" aria-label="ITWAY home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" focusable="false">
+              <defs>
+                <linearGradient
+                  id="itwayLogoGrad"
+                  x1="10"
+                  y1="8"
+                  x2="54"
+                  y2="56"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#36F6DC" />
+                  <stop offset="0.5" stop-color="#22c4e8" />
+                  <stop offset="1" stop-color="#1D73FF" />
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="14" fill="url(#itwayLogoGrad)" />
+              <rect
+                x="1"
+                y="1"
+                width="62"
+                height="62"
+                rx="13"
+                stroke="rgba(255,255,255,0.32)"
+                stroke-width="1"
+              />
+              <g
+                stroke="#061018"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                opacity="0.88"
+              >
+                <path d="M15 46 L30 31 L15 16" />
+                <path d="M26 46 L41 31 L26 16" />
+              </g>
+              <circle cx="47" cy="19" r="5.5" fill="rgba(255,255,255,0.95)" />
+            </svg>
+          </span>
+          <span class="brand__name">ITWAY</span>
+        </a>
+
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-panel" id="nav-panel" aria-label="Main">
+          <ul class="nav-list">
+            <li><a href="#services" data-i18n="nav_services">Послуги</a></li>
+            <li><a href="#ai" data-i18n="nav_ai">AI</a></li>
+            <li><a href="#lead" data-i18n="nav_contacts">Контакти</a></li>
+          </ul>
+          <div class="header-controls">
+            <div class="lang-switch" role="group" aria-label="Language">
+              <button type="button" data-lang="uk" class="is-active" aria-pressed="true">UA</button>
+              <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <div class="theme-switch" role="group" aria-label="Theme">
+              <button type="button" data-theme="dark" class="is-active" aria-pressed="true" title="Dark">◐</button>
+              <button type="button" data-theme="light" aria-pressed="false" title="Light">◑</button>
+            </div>
+            <a class="btn btn-primary btn-sm" href="#lead" data-i18n="nav_cta">Залишити контакт</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="badge" data-i18n="hero_badge">IT-компанія • Київ</div>
+            <h1 class="hero-title">
+              <span class="hero-title__big">ITWAY</span>
+              <span class="hero-title__sub" data-i18n="hero_title_sub"
+                >Сайти та цифрові рішення, які приносять результат</span
+              >
+            </h1>
+            <p class="hero-lead" data-i18n="hero_lead">
+              Проєктуємо, розробляємо та запускаємо веб-продукти. Автоматизуємо процеси та впроваджуємо AI-інструменти, щоб
+              ваш бізнес ріс швидше.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#lead" data-i18n="hero_cta_primary">Отримати консультацію</a>
+              <a class="btn btn-ghost" href="#services" data-i18n="hero_cta_secondary">Подивитись послуги</a>
+            </div>
+            <div class="trust">
+              <div class="trust-item">
+                <div class="trust-num">7–21</div>
+                <div class="trust-text" data-i18n="trust_1">днів до першої версії</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-num">SEO</div>
+                <div class="trust-text" data-i18n="trust_2">база з самого старту</div>
+              </div>
+              <div class="trust-item">
+                <div class="trust-num">UA/EN</div>
+                <div class="trust-text" data-i18n="trust_3">готово для міжнародних клієнтів</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Highlights">
+            <div class="hero-card__img" aria-hidden="true">
+              <div class="img-grid"></div>
+              <div class="img-orb img-orb--a"></div>
+              <div class="img-orb img-orb--b"></div>
+              <div class="img-line img-line--a"></div>
+              <div class="img-line img-line--b"></div>
+            </div>
+            <div class="hero-card__content">
+              <h2 class="hero-card__title" data-i18n="hero_card_title">Що отримаєте</h2>
+              <ul class="checklist">
+                <li data-i18n="hero_card_1">Дизайн і верстка під мобільні та ПК</li>
+                <li data-i18n="hero_card_2">Швидке завантаження та сучасний стек</li>
+                <li data-i18n="hero_card_3">Інтеграції: CRM, заявки, аналітика</li>
+                <li data-i18n="hero_card_4">Підтримка після запуску</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="services_title">Послуги, які продають</h2>
+            <p data-i18n="services_sub">
+              Замість “формальних формулювань” — конкретні рішення: що робимо та який результат ви отримаєте.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-badge" data-i18n="svc_badge_main">Основне</div>
+              <h3 data-i18n="svc_web_title">Сайти під ключ</h3>
+              <p data-i18n="svc_web_text">
+                Лендінги, корпоративні сайти, каталоги й магазини. Адаптив, чиста верстка, швидкість, базове SEO.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-badge" data-i18n="svc_badge_fast">Швидкий старт</div>
+              <h3 data-i18n="svc_ui_title">Дизайн та UI/UX</h3>
+              <p data-i18n="svc_ui_text">
+                Прототип, структура, стиль. Робимо так, щоб клієнту було зрозуміло, а вам — вигідно.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-badge" data-i18n="svc_badge_growth">Зростання</div>
+              <h3 data-i18n="svc_dev_title">Програмування та інтеграції</h3>
+              <p data-i18n="svc_dev_text">
+                Форми, кабінети, CRM-логіка, API, аналітика. Підключимо сервіси та автоматизуємо рутину.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-badge" data-i18n="svc_badge_reliable">Надійність</div>
+              <h3 data-i18n="svc_infra_title">Хостинг та інфраструктура</h3>
+              <p data-i18n="svc_infra_text">
+                Домен, SSL, деплой, моніторинг, резервні копії. Стабільна робота та швидке завантаження.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-badge" data-i18n="svc_badge_support">Супровід</div>
+              <h3 data-i18n="svc_support_title">Підтримка та розвиток</h3>
+              <p data-i18n="svc_support_text">
+                Оновлення, нові сторінки, оптимізація швидкості, безпека. Ми на зв’язку після релізу.
+              </p>
+            </article>
+
+            <article class="card card--accent">
+              <div class="card-badge" data-i18n="svc_badge_ai">AI</div>
+              <h3 data-i18n="svc_ai_title">AI-інструменти для бізнесу</h3>
+              <p data-i18n="svc_ai_text">
+                Чат-боти, генерація контенту, пошук по базі знань, автоматизація звернень і підтримки.
+              </p>
+              <a class="card-link" href="#ai" data-i18n="svc_ai_link">Як це працює →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="ai">
+        <div class="container">
+          <div class="split">
+            <div>
+              <div class="section-head">
+                <h2 data-i18n="ai_title">AI як помічник, а не “іграшка”</h2>
+                <p data-i18n="ai_sub">
+                  Підбираємо сценарії під вашу сферу: продажі, підтримка, документообіг, контент. Результат — менше ручної
+                  роботи та швидші відповіді клієнтам.
+                </p>
+              </div>
+              <ul class="bullets">
+                <li data-i18n="ai_1">Автоматична обробка заявок і звернень</li>
+                <li data-i18n="ai_2">Шаблони відповідей, тексти, презентації</li>
+                <li data-i18n="ai_3">Пошук по внутрішніх документах і базі знань</li>
+              </ul>
+            </div>
+            <div class="ai-visual" aria-hidden="true">
+              <div class="ai-card">
+                <svg class="ai-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+                  <defs>
+                    <linearGradient id="ai-node-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#36f6dc" />
+                      <stop offset="100%" stop-color="#1d73ff" />
+                    </linearGradient>
+                    <linearGradient id="ai-panel" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
+                      <stop offset="100%" stop-color="rgba(255,255,255,0.02)" />
+                    </linearGradient>
+                    <filter id="ai-soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b" />
+                      <feMerge>
+                        <feMergeNode in="b" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <rect width="400" height="280" fill="url(#ai-panel)" />
+                  <g class="ai-illustration__grid" stroke-width="0.6" opacity="0.9">
+                    <path d="M0 56h400M0 112h400M0 168h400M0 224h400M56 0v280M112 0v280M168 0v280M224 0v280M280 0v280M336 0v280" />
+                  </g>
+                  <g class="ai-illustration__links" stroke="url(#ai-node-glow)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85">
+                    <path class="ai-illustration__flow" d="M52 198 C 95 120, 130 95, 188 88" />
+                    <path class="ai-illustration__flow ai-illustration__flow--b" d="M188 88 C 240 82, 275 108, 318 162" />
+                    <path class="ai-illustration__flow ai-illustration__flow--c" d="M318 162 C 355 198, 365 218, 348 246" />
+                    <path class="ai-illustration__flow" d="M72 72 L 132 108" />
+                    <path class="ai-illustration__flow ai-illustration__flow--b" d="M268 52 L 308 98" />
+                    <path class="ai-illustration__flow ai-illustration__flow--c" d="M128 200 L 98 232" />
+                  </g>
+                  <g filter="url(#ai-soft-glow)">
+                    <circle class="ai-illustration__node" cx="52" cy="198" r="7" fill="url(#ai-node-glow)" />
+                    <circle class="ai-illustration__node ai-illustration__node--pulse" cx="188" cy="88" r="11" fill="url(#ai-node-glow)" />
+                    <circle class="ai-illustration__node" cx="318" cy="162" r="7" fill="url(#ai-node-glow)" />
+                    <circle class="ai-illustration__node" cx="72" cy="72" r="5" fill="#36f6dc" opacity="0.9" />
+                    <circle class="ai-illustration__node" cx="268" cy="52" r="5" fill="#1d73ff" opacity="0.85" />
+                    <circle class="ai-illustration__node" cx="348" cy="246" r="6" fill="url(#ai-node-glow)" />
+                  </g>
+                  <rect
+                    x="230"
+                    y="118"
+                    width="118"
+                    height="76"
+                    rx="12"
+                    fill="rgba(7,9,19,0.35)"
+                    stroke="rgba(154,255,246,0.28)"
+                    stroke-width="1"
+                  />
+                  <g class="ai-illustration__hud">
+                    <rect x="246" y="136" width="52" height="6" rx="3" fill="rgba(255,255,255,0.14)" />
+                    <rect x="246" y="150" width="86" height="6" rx="3" fill="rgba(255,255,255,0.10)" />
+                    <rect x="246" y="164" width="64" height="6" rx="3" fill="rgba(255,255,255,0.10)" />
+                    <rect x="314" y="136" width="26" height="14" rx="5" fill="rgba(54,246,220,0.2)" stroke="rgba(54,246,220,0.45)" stroke-width="0.8" />
+                  </g>
+                  <text
+                    class="ai-illustration__tag"
+                    x="200"
+                    y="262"
+                    text-anchor="middle"
+                    font-family="Manrope, system-ui, sans-serif"
+                    font-size="11"
+                    font-weight="700"
+                    letter-spacing="0.14em"
+                  >
+                    AUTOMATION · AI
+                  </text>
+                </svg>
+              </div>
+              <div class="ai-glow"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="lead">
+        <div class="container">
+          <div class="lead">
+            <div class="lead-copy">
+              <h2 data-i18n="lead_title">Залиште контакт — ми запропонуємо рішення</h2>
+              <p data-i18n="lead_sub">
+                Опишіть задачу й залиште контакт. Ми відповімо з уточнюючими питаннями та коротким планом.
+              </p>
+              <div class="lead-meta">
+                <div class="meta-item">
+                  <div class="meta-k" data-i18n="lead_meta_1k">Email</div>
+                  <div class="meta-v"><a href="mailto:support@itway.digital">support@itway.digital</a></div>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-k" data-i18n="lead_meta_2k">Код</div>
+                  <div class="meta-v">45932175</div>
+                </div>
+              </div>
+            </div>
+
+            <form class="lead-form" id="lead-form">
+              <div class="field">
+                <label for="name" data-i18n="f_name">Ім’я</label>
+                <input id="name" name="name" required />
+              </div>
+              <div class="field">
+                <label for="email" data-i18n="f_email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="phone" data-i18n="f_phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+              <div class="field">
+                <label for="company" data-i18n="f_company">Компанія</label>
+                <input id="company" name="company" />
+              </div>
+              <div class="field">
+                <label for="message" data-i18n="f_msg">Повідомлення</label>
+                <textarea id="message" name="message" rows="4" placeholder="Наприклад: сайт для кавʼярні, 6 сторінок, UA/EN"></textarea>
+              </div>
+              <button class="btn btn-primary w100" type="submit" data-i18n="f_send">Надіслати</button>
+              <p class="form-note" id="lead-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacts">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="contacts_title">Контакти</h2>
+            <p data-i18n="contacts_sub">Реквізити та спосіб зв’язку.</p>
+          </div>
+          <div class="contacts-grid">
+            <div class="contact-card">
+              <div class="contact-k" data-i18n="c_code">Ідентифікаційний код</div>
+              <div class="contact-v">45932175</div>
+              <div class="contact-k" data-i18n="c_email">Електронна пошта</div>
+              <div class="contact-v"><a href="mailto:support@itway.digital">support@itway.digital</a></div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-k" data-i18n="c_addr">Адреса</div>
+              <div class="contact-v" data-i18n="addr">
+                Україна, 04052, місто Київ, вул. Глибочицька, будинок 13, квартира 108
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">ITWAY</div>
+          <div class="footer-meta">
+            <div><span data-i18n="c_code">Ідентифікаційний код</span>: 45932175</div>
+            <div><span data-i18n="c_email">Електронна пошта</span>: <a href="mailto:support@itway.digital">support@itway.digital</a></div>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="uk" class="is-active" aria-pressed="true">UA</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <div>© <span id="year"></span> ITWAY. <span data-i18n="rights">Усі права захищені.</span></div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <!-- Якщо API на іншому домені/порту — розкоментуйте й вкажіть базу без /api:
+    <script>window.ITWAY_API_BASE = 'http://localhost:8788';</script>
+    -->
+    <script src="js/main.js?v=6"></script>
+  </body>
+</html>
+
