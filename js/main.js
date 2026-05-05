@@ -25,6 +25,7 @@
       hero_card_2: "Швидке завантаження та сучасний стек",
       hero_card_3: "Інтеграції: CRM, заявки, аналітика",
       hero_card_4: "Підтримка після запуску",
+      hero_showcase_alt: "Приклади веб-проєктів на моніторах — портфоліо-візуал",
       services_title: "Послуги, які продають",
       services_sub:
         "Замість “формальних формулювань” — конкретні рішення: що робимо та який результат ви отримаєте.",
@@ -114,6 +115,7 @@
       hero_card_2: "Fast loading and a modern stack",
       hero_card_3: "Integrations: CRM, leads, analytics",
       hero_card_4: "Post‑launch support",
+      hero_showcase_alt: "Web project mockups on desktop screens — portfolio visual",
       services_title: "Services that convert",
       services_sub: "Clear offers with outcomes—built to sell, not to look like paperwork.",
       svc_badge_main: "Core",
@@ -227,6 +229,10 @@
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       const key = el.getAttribute("data-i18n");
       if (key && dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-alt");
+      if (key && dict[key] !== undefined) el.setAttribute("alt", dict[key]);
     });
     document.querySelectorAll(".lang-switch button[data-lang]").forEach(function (btn) {
       const active = btn.getAttribute("data-lang") === lang;

@@ -440,13 +440,34 @@ a:hover {
   overflow: hidden;
 }
 .hero-card__img {
-  height: 180px;
   position: relative;
+  min-height: 140px;
+  padding: 0.65rem 0.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background:
-    radial-gradient(300px 220px at 20% 30%, rgba(54, 246, 220, 0.18), transparent 60%),
-    radial-gradient(320px 240px at 80% 30%, rgba(29, 115, 255, 0.18), transparent 62%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+    radial-gradient(300px 220px at 20% 30%, rgba(54, 246, 220, 0.12), transparent 60%),
+    radial-gradient(320px 240px at 80% 30%, rgba(29, 115, 255, 0.12), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08));
 }
+
+.hero-showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: min(240px, 32vw);
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 560px) {
+  .hero-showcase-img {
+    max-height: min(200px, 48vw);
+  }
+}
+
 .img-grid {
   position: absolute;
   inset: 0;
