@@ -239,71 +239,116 @@
             </div>
             <div class="ai-visual" aria-hidden="true">
               <div class="ai-card">
-                <svg class="ai-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+                <svg class="ai-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" aria-hidden="true">
                   <defs>
-                    <linearGradient id="ai-node-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="ai-neon" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stop-color="#36f6dc" />
                       <stop offset="100%" stop-color="#1d73ff" />
                     </linearGradient>
-                    <linearGradient id="ai-panel" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
-                      <stop offset="100%" stop-color="rgba(255,255,255,0.02)" />
+                    <linearGradient id="ai-screen-bg" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#0c1528" />
+                      <stop offset="100%" stop-color="#060b14" />
                     </linearGradient>
-                    <filter id="ai-soft-glow" x="-40%" y="-40%" width="180%" height="180%">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b" />
+                    <filter id="ai-glow-big" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="8" result="b" />
                       <feMerge>
                         <feMergeNode in="b" />
                         <feMergeNode in="SourceGraphic" />
                       </feMerge>
                     </filter>
+                    <filter id="ai-tile-glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
                   </defs>
-                  <rect width="400" height="280" fill="url(#ai-panel)" />
-                  <g class="ai-illustration__grid" stroke-width="0.6" opacity="0.9">
-                    <path d="M0 56h400M0 112h400M0 168h400M0 224h400M56 0v280M112 0v280M168 0v280M224 0v280M280 0v280M336 0v280" />
+
+                  <rect width="420" height="300" fill="transparent" />
+
+                  <!-- subtle grid + particles -->
+                  <g class="ai-illustration__bg-grid" opacity="0.55" stroke-width="0.55">
+                    <path d="M0 50h420M0 100h420M0 150h420M0 200h420M0 250h420M70 0v300M140 0v300M210 0v300M280 0v300M350 0v300" />
                   </g>
-                  <g class="ai-illustration__links" stroke="url(#ai-node-glow)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85">
-                    <path class="ai-illustration__flow" d="M52 198 C 95 120, 130 95, 188 88" />
-                    <path class="ai-illustration__flow ai-illustration__flow--b" d="M188 88 C 240 82, 275 108, 318 162" />
-                    <path class="ai-illustration__flow ai-illustration__flow--c" d="M318 162 C 355 198, 365 218, 348 246" />
-                    <path class="ai-illustration__flow" d="M72 72 L 132 108" />
-                    <path class="ai-illustration__flow ai-illustration__flow--b" d="M268 52 L 308 98" />
-                    <path class="ai-illustration__flow ai-illustration__flow--c" d="M128 200 L 98 232" />
+                  <circle cx="62" cy="38" r="1.2" fill="#36f6dc" opacity="0.6" />
+                  <circle cx="380" cy="72" r="1" fill="#1d73ff" opacity="0.55" />
+                  <circle cx="96" cy="262" r="1" fill="#36f6dc" opacity="0.45" />
+                  <circle cx="340" cy="240" r="1.2" fill="#fff" opacity="0.2" />
+
+                  <!-- ambient glow behind laptop -->
+                  <ellipse cx="210" cy="155" rx="130" ry="95" fill="url(#ai-neon)" opacity="0.12" filter="url(#ai-glow-big)" />
+
+                  <!-- floating icon tiles -->
+                  <g class="ai-illustration__float ai-illustration__float--1" filter="url(#ai-tile-glow)">
+                    <rect x="28" y="42" width="44" height="44" rx="10" fill="rgba(12,18,32,0.85)" stroke="url(#ai-neon)" stroke-width="1.2" opacity="0.95" />
+                    <path d="M44 58h12l8 10v18H44V58z" fill="none" stroke="#9afef0" stroke-width="2" stroke-linejoin="round" opacity="0.9" />
+                    <path d="M44 68h20" stroke="#9afef0" stroke-width="2" opacity="0.6" />
                   </g>
-                  <g filter="url(#ai-soft-glow)">
-                    <circle class="ai-illustration__node" cx="52" cy="198" r="7" fill="url(#ai-node-glow)" />
-                    <circle class="ai-illustration__node ai-illustration__node--pulse" cx="188" cy="88" r="11" fill="url(#ai-node-glow)" />
-                    <circle class="ai-illustration__node" cx="318" cy="162" r="7" fill="url(#ai-node-glow)" />
-                    <circle class="ai-illustration__node" cx="72" cy="72" r="5" fill="#36f6dc" opacity="0.9" />
-                    <circle class="ai-illustration__node" cx="268" cy="52" r="5" fill="#1d73ff" opacity="0.85" />
-                    <circle class="ai-illustration__node" cx="348" cy="246" r="6" fill="url(#ai-node-glow)" />
+                  <g class="ai-illustration__float ai-illustration__float--2" filter="url(#ai-tile-glow)">
+                    <rect x="332" y="28" width="44" height="44" rx="10" fill="rgba(12,18,32,0.85)" stroke="url(#ai-neon)" stroke-width="1.2" opacity="0.95" />
+                    <circle cx="354" cy="50" r="9" fill="none" stroke="#9afef0" stroke-width="2" opacity="0.85" />
+                    <path d="M361 57l14 14" stroke="#9afef0" stroke-width="2" stroke-linecap="round" opacity="0.85" />
                   </g>
-                  <rect
-                    x="230"
-                    y="118"
-                    width="118"
-                    height="76"
-                    rx="12"
-                    fill="rgba(7,9,19,0.35)"
-                    stroke="rgba(154,255,246,0.28)"
-                    stroke-width="1"
-                  />
-                  <g class="ai-illustration__hud">
-                    <rect x="246" y="136" width="52" height="6" rx="3" fill="rgba(255,255,255,0.14)" />
-                    <rect x="246" y="150" width="86" height="6" rx="3" fill="rgba(255,255,255,0.10)" />
-                    <rect x="246" y="164" width="64" height="6" rx="3" fill="rgba(255,255,255,0.10)" />
-                    <rect x="314" y="136" width="26" height="14" rx="5" fill="rgba(54,246,220,0.2)" stroke="rgba(54,246,220,0.45)" stroke-width="0.8" />
+                  <g class="ai-illustration__float ai-illustration__float--3" filter="url(#ai-tile-glow)">
+                    <rect x="22" y="168" width="44" height="44" rx="10" fill="rgba(12,18,32,0.85)" stroke="url(#ai-neon)" stroke-width="1.2" opacity="0.95" />
+                    <path d="M36 184h16M36 192h16M36 200h10" stroke="#9afef0" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+                    <rect x="34" y="178" width="20" height="26" rx="2" fill="none" stroke="#9afef0" stroke-width="1.5" opacity="0.5" />
                   </g>
+                  <g class="ai-illustration__float ai-illustration__float--4" filter="url(#ai-tile-glow)">
+                    <rect x="348" y="158" width="44" height="44" rx="10" fill="rgba(12,18,32,0.85)" stroke="url(#ai-neon)" stroke-width="1.2" opacity="0.95" />
+                    <path d="M362 188v-18M372 188v-12M382 188v-8" stroke="#9afef0" stroke-width="3" stroke-linecap="round" opacity="0.9" />
+                  </g>
+                  <g class="ai-illustration__float ai-illustration__float--5" filter="url(#ai-tile-glow)">
+                    <rect x="188" y="12" width="44" height="44" rx="10" fill="rgba(12,18,32,0.85)" stroke="url(#ai-neon)" stroke-width="1.2" opacity="0.95" />
+                    <path d="M198 34h24a6 6 0 016 6v8a6 6 0 01-6 6h-12l-8 8v-8h-4a6 6 0 01-6-6v-8a6 6 0 016-6z" fill="none" stroke="#9afef0" stroke-width="1.6" opacity="0.85" />
+                  </g>
+
+                  <!-- laptop -->
+                  <g filter="url(#ai-tile-glow)">
+                    <path
+                      d="M95 188 L325 188 L315 178 L105 178 Z"
+                      fill="#121a2a"
+                      stroke="rgba(154,255,246,0.25)"
+                      stroke-width="1"
+                    />
+                    <path
+                      d="M88 192 L332 192 L338 198 L82 198 Z"
+                      fill="#0a101c"
+                      stroke="rgba(154,255,246,0.15)"
+                      stroke-width="0.8"
+                    />
+                    <rect x="108" y="58" width="204" height="128" rx="12" fill="#0d1424" stroke="rgba(154,255,246,0.35)" stroke-width="1.5" />
+                    <rect x="116" y="66" width="188" height="112" rx="8" fill="url(#ai-screen-bg)" stroke="rgba(54,246,220,0.12)" />
+                    <!-- chat UI on screen -->
+                    <circle cx="136" cy="98" r="14" fill="rgba(54,246,220,0.2)" stroke="url(#ai-neon)" stroke-width="1.2" />
+                    <circle cx="136" cy="98" r="6" fill="url(#ai-neon)" opacity="0.55" />
+                    <rect x="156" y="86" width="130" height="8" rx="3" fill="rgba(255,255,255,0.12)" />
+                    <rect x="156" y="100" width="98" height="8" rx="3" fill="rgba(255,255,255,0.08)" />
+                    <rect x="156" y="114" width="72" height="8" rx="3" fill="rgba(255,255,255,0.06)" />
+                    <rect x="268" y="92" width="28" height="16" rx="8" fill="rgba(54,246,220,0.25)" stroke="rgba(54,246,220,0.5)" stroke-width="1" />
+                    <circle cx="284" cy="100" r="5" fill="#36f6dc" opacity="0.85" />
+                  </g>
+
+                  <!-- AI cube -->
+                  <g filter="url(#ai-tile-glow)">
+                    <path d="M175 232 L205 218 L235 232 L205 246 Z" fill="rgba(29,115,255,0.35)" stroke="url(#ai-neon)" stroke-width="1.2" />
+                    <path d="M175 232 L175 258 L205 272 L205 246 Z" fill="rgba(54,246,220,0.15)" stroke="url(#ai-neon)" stroke-width="1" />
+                    <path d="M205 246 L235 232 L235 258 L205 272 Z" fill="rgba(12,24,48,0.9)" stroke="url(#ai-neon)" stroke-width="1" />
+                    <text x="205" y="252" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="800" fill="#e8fbff" opacity="0.95">AI</text>
+                  </g>
+
                   <text
                     class="ai-illustration__tag"
-                    x="200"
-                    y="262"
+                    x="210"
+                    y="288"
                     text-anchor="middle"
                     font-family="Manrope, system-ui, sans-serif"
-                    font-size="11"
+                    font-size="10"
                     font-weight="700"
-                    letter-spacing="0.14em"
+                    letter-spacing="0.16em"
                   >
-                    AUTOMATION · AI
+                    ASSISTANT · AUTOMATION
                   </text>
                 </svg>
               </div>

@@ -830,42 +830,39 @@ a:hover {
   height: 100%;
   display: block;
 }
-.ai-illustration__grid {
-  stroke: rgba(154, 255, 246, 0.22);
+.ai-illustration__bg-grid {
+  stroke: rgba(154, 255, 246, 0.18);
 }
-html[data-theme="light"] .ai-illustration__grid {
-  stroke: rgba(11, 18, 32, 0.14);
+html[data-theme="light"] .ai-illustration__bg-grid {
+  stroke: rgba(11, 18, 32, 0.12);
 }
-.ai-illustration__flow {
-  stroke-dasharray: 10 16;
-  animation: aiFlow 3s linear infinite;
-}
-.ai-illustration__flow--b {
-  animation-duration: 3.8s;
-  animation-direction: reverse;
-}
-.ai-illustration__flow--c {
-  animation-duration: 2.4s;
-}
-@keyframes aiFlow {
-  to {
-    stroke-dashoffset: -52;
-  }
-}
-.ai-illustration__node--pulse {
+.ai-illustration__float {
   transform-box: fill-box;
   transform-origin: center;
-  animation: aiNodePulse 2.6s ease-in-out infinite;
+  animation: aiFloatTile 4.2s ease-in-out infinite;
 }
-@keyframes aiNodePulse {
+.ai-illustration__float--1 {
+  animation-delay: 0s;
+}
+.ai-illustration__float--2 {
+  animation-delay: -0.7s;
+}
+.ai-illustration__float--3 {
+  animation-delay: -1.4s;
+}
+.ai-illustration__float--4 {
+  animation-delay: -2.1s;
+}
+.ai-illustration__float--5 {
+  animation-delay: -2.8s;
+}
+@keyframes aiFloatTile {
   0%,
   100% {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(0);
   }
   50% {
-    transform: scale(1.08);
-    opacity: 0.88;
+    transform: translateY(-7px);
   }
 }
 .ai-illustration__tag {
@@ -1073,8 +1070,7 @@ html[data-theme="light"] .ai-illustration__tag {
   .media-bars span,
   .media-wave,
   .media-ring,
-  .ai-illustration__flow,
-  .ai-illustration__node--pulse {
+  .ai-illustration__float {
     animation: none;
   }
 }
