@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="screenL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a28"/>
+      <stop offset="1" stop-color="#152a40"/>
+    </linearGradient>
+    <linearGradient id="screenC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#36F6DC"/>
+      <stop offset="0.45" stop-color="#22c4e8"/>
+      <stop offset="1" stop-color="#1D73FF"/>
+    </linearGradient>
+    <linearGradient id="screenR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#36F6DC"/>
+      <stop offset="1" stop-color="#1D73FF"/>
+    </linearGradient>
+    <linearGradient id="thumbGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#36F6DC"/>
+      <stop offset="1" stop-color="#1D73FF"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <clipPath id="clipL"><rect x="58" y="118" width="218" height="136" rx="10"/></clipPath>
+    <clipPath id="clipC"><rect x="318" y="42" width="368" height="228" rx="12"/></clipPath>
+    <clipPath id="clipR"><rect x="686" y="122" width="218" height="136" rx="10"/></clipPath>
+  </defs>
+
+  <!-- Left monitor (analytics dashboard) -->
+  <g filter="url(#softShadow)">
+    <rect x="48" y="108" width="238" height="156" rx="14" fill="#0f172a" stroke="rgba(148,163,184,0.35)" stroke-width="1"/>
+    <rect x="58" y="118" width="218" height="136" rx="10" fill="url(#screenL)"/>
+    <g clip-path="url(#clipL)">
+      <rect x="58" y="118" width="218" height="28" fill="rgba(15,23,42,0.85)"/>
+      <circle cx="78" cy="132" r="6" fill="#36F6DC" opacity="0.9"/>
+      <rect x="92" y="127" width="72" height="10" rx="3" fill="rgba(148,163,184,0.5)"/>
+      <rect x="170" y="127" width="90" height="10" rx="3" fill="rgba(148,163,184,0.25)"/>
+      <rect x="68" y="158" width="88" height="52" rx="6" fill="rgba(30,41,59,0.9)" stroke="rgba(54,246,220,0.25)"/>
+      <rect x="76" y="168" width="16" height="32" rx="2" fill="url(#accentBar)" opacity="0.85"/>
+      <rect x="98" y="176" width="16" height="24" rx="2" fill="rgba(54,246,220,0.45)"/>
+      <rect x="120" y="162" width="16" height="38" rx="2" fill="rgba(29,115,255,0.55)"/>
+      <rect x="164" y="158" width="98" height="52" rx="6" fill="rgba(30,41,59,0.9)" stroke="rgba(255,255,255,0.08)"/>
+      <path d="M174 198 L190 182 L206 190 L222 172 L238 188" stroke="#36F6DC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+      <circle cx="238" cy="172" r="4" fill="#22c4e8"/>
+      <rect x="68" y="222" width="194" height="22" rx="5" fill="rgba(15,23,42,0.95)"/>
+      <rect x="76" y="228" width="46" height="10" rx="2" fill="rgba(54,246,220,0.35)"/>
+      <rect x="130" y="228" width="120" height="10" rx="2" fill="rgba(148,163,184,0.25)"/>
+    </g>
+    <path d="M140 264 L118 318 L216 318 L194 264 Z" fill="#1e293b" stroke="rgba(148,163,184,0.2)"/>
+    <ellipse cx="167" cy="322" rx="52" ry="8" fill="rgba(0,0,0,0.35)"/>
+  </g>
+
+  <!-- Right monitor (cards / catalog) -->
+  <g filter="url(#softShadow)">
+    <rect x="676" y="112" width="238" height="156" rx="14" fill="#0f172a" stroke="rgba(148,163,184,0.35)" stroke-width="1"/>
+    <rect x="686" y="122" width="218" height="136" rx="10" fill="url(#screenR)"/>
+    <g clip-path="url(#clipR)">
+      <rect x="686" y="122" width="218" height="26" fill="#fff" opacity="0.95"/>
+      <rect x="696" y="130" width="48" height="10" rx="3" fill="#1D73FF" opacity="0.85"/>
+      <rect x="752" y="130" width="70" height="10" rx="3" fill="#cbd5e1"/>
+      <rect x="696" y="156" width="96" height="54" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <rect x="704" y="164" width="80" height="22" rx="4" fill="url(#thumbGrad)" opacity="0.45"/>
+      <rect x="704" y="190" width="52" height="8" rx="2" fill="#94a3b8"/>
+      <rect x="804" y="156" width="92" height="54" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <rect x="812" y="164" width="76" height="30" rx="4" fill="#f1f5f9"/>
+      <rect x="812" y="198" width="48" height="6" rx="2" fill="#cbd5e1"/>
+      <rect x="696" y="220" width="96" height="30" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <rect x="804" y="220" width="92" height="30" rx="6" fill="#fff" stroke="#e2e8f0"/>
+      <rect x="704" y="228" width="36" height="14" rx="3" fill="#22c4e8" opacity="0.5"/>
+      <rect x="812" y="228" width="36" height="14" rx="3" fill="#1D73FF" opacity="0.35"/>
+    </g>
+    <path d="M768 268 L746 322 L844 322 L822 268 Z" fill="#1e293b" stroke="rgba(148,163,184,0.2)"/>
+    <ellipse cx="795" cy="326" rx="52" ry="8" fill="rgba(0,0,0,0.35)"/>
+  </g>
+
+  <!-- Center monitor (hero / brand)  largest, on top -->
+  <g filter="url(#softShadow)">
+    <rect x="298" y="22" width="408" height="268" rx="18" fill="#0b1220" stroke="rgba(154,255,246,0.25)" stroke-width="1.2"/>
+    <rect x="318" y="42" width="368" height="228" rx="12" fill="url(#screenC)"/>
+    <g clip-path="url(#clipC)">
+      <circle cx="520" cy="120" r="120" fill="rgba(255,255,255,0.12)"/>
+      <circle cx="680" cy="200" r="90" fill="rgba(6,16,24,0.15)"/>
+      <text x="340" y="118" fill="#061018" font-family="system-ui,Segoe UI,sans-serif" font-size="42" font-weight="900" letter-spacing="-0.04em">ITWAY</text>
+      <rect x="340" y="138" width="220" height="12" rx="4" fill="rgba(6,16,24,0.35)"/>
+      <rect x="340" y="162" width="160" height="36" rx="10" fill="#061018" opacity="0.85"/>
+      <text x="356" y="186" fill="#e0f7ff" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700">Start project ù</text>
+      <rect x="580" y="158" width="86" height="36" rx="10" fill="rgba(255,255,255,0.22)" stroke="rgba(6,16,24,0.2)"/>
+    </g>
+    <path d="M420 290 L388 370 L612 370 L580 290 Z" fill="#111827" stroke="rgba(148,163,184,0.25)"/>
+    <ellipse cx="500" cy="378" rx="110" ry="12" fill="rgba(0,0,0,0.4)"/>
+    <rect x="472" y="360" width="56" height="14" rx="4" fill="#1f2937" stroke="rgba(148,163,184,0.2)"/>
+  </g>
+</svg>
