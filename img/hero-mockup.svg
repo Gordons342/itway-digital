@@ -76,7 +76,7 @@
     <ellipse cx="795" cy="326" rx="52" ry="8" fill="rgba(0,0,0,0.35)"/>
   </g>
 
-  <!-- Center monitor (hero / brand)  largest, on top -->
+  <!-- Center monitor (hero / brand), largest, on top -->
   <g filter="url(#softShadow)">
     <rect x="298" y="22" width="408" height="268" rx="18" fill="#0b1220" stroke="rgba(154,255,246,0.25)" stroke-width="1.2"/>
     <rect x="318" y="42" width="368" height="228" rx="12" fill="url(#screenC)"/>
@@ -86,7 +86,7 @@
       <text x="340" y="118" fill="#061018" font-family="system-ui,Segoe UI,sans-serif" font-size="42" font-weight="900" letter-spacing="-0.04em">ITWAY</text>
       <rect x="340" y="138" width="220" height="12" rx="4" fill="rgba(6,16,24,0.35)"/>
       <rect x="340" y="162" width="160" height="36" rx="10" fill="#061018" opacity="0.85"/>
-      <text x="356" y="186" fill="#e0f7ff" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700">Start project ù</text>
+      <text x="356" y="186" fill="#e0f7ff" font-family="system-ui,Segoe UI,sans-serif" font-size="14" font-weight="700">Start project -&gt;</text>
       <rect x="580" y="158" width="86" height="36" rx="10" fill="rgba(255,255,255,0.22)" stroke="rgba(6,16,24,0.2)"/>
     </g>
     <path d="M420 290 L388 370 L612 370 L580 290 Z" fill="#111827" stroke="rgba(148,163,184,0.25)"/>
