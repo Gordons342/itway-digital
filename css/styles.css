@@ -1024,12 +1024,19 @@ body.order-modal-open {
   overflow: hidden;
   padding: 0.35rem;
 }
+html[data-theme="dark"] .ai-card .eb-content {
+  background: #0a0e16;
+}
 .ai-illustration {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 14px;
   object-fit: contain;
+}
+html[data-theme="light"] .ai-illustration--dark,
+html[data-theme="dark"] .ai-illustration--light {
+  display: none;
 }
 
 @media (max-width: 480px) {
