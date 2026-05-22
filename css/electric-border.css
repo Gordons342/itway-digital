@@ -1,10 +1,13 @@
 /* ElectricBorder — inspired by @BalintFerenczy / react-bits */
 .electric-border {
   --electric-light-color: var(--electric-border-color);
+  --eb-pad: 12px;
   position: relative;
   border-radius: inherit;
   overflow: visible;
   isolation: isolate;
+  padding: var(--eb-pad);
+  margin: calc(var(--eb-pad) * -1);
 }
 
 @supports (color: oklch(from #7df9ff l c h)) {

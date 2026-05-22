@@ -98,8 +98,10 @@
 
     <main id="top">
       <section class="hero">
-        <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero__fx" aria-hidden="true">
+          <canvas class="hero-canvas" id="hero-canvas"></canvas>
+          <div class="hero-bg"></div>
+        </div>
         <div class="container hero-inner">
           <div class="hero-copy">
             <div class="badge" data-i18n="hero_badge">IT-компанія • Київ</div>
@@ -356,7 +358,7 @@
     <!-- Якщо API на іншому домені/порту — розкоментуйте й вкажіть базу без /api:
     <script>window.ITWAY_API_BASE = 'http://localhost:8788';</script>
     -->
-    <script src="js/electric-border.js?v=1"></script>
+    <script src="js/electric-border.js?v=2"></script>
     <script src="js/main.js?v=8"></script>
   </body>
 </html>

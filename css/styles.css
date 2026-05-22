@@ -313,8 +313,15 @@ a:hover {
 /* Hero */
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2.75rem, 7vw, 5.5rem);
+}
+.hero__fx {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 .hero-canvas {
   position: absolute;
@@ -342,6 +349,7 @@ a:hover {
 
 .hero-inner {
   position: relative;
+  z-index: 1;
   display: grid;
   gap: 1.5rem;
 }

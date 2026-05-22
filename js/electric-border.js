@@ -171,16 +171,22 @@
     var lastDpr = 1;
     var animationId = 0;
 
+    var contentEl = parts.content;
+
+    function measureTarget() {
+      var node = contentEl && contentEl.getBoundingClientRect().width > 1 ? contentEl : el;
+      return node.getBoundingClientRect();
+    }
+
     function updateSize() {
-      var rect = el.getBoundingClientRect();
-      var w = rect.width + borderOffset * 2;
-      var h = rect.height + borderOffset * 2;
+      var rect = measureTarget();
+      var w = Math.max(rect.width, 1) + borderOffset * 2;
+      var h = Math.max(rect.height, 1) + borderOffset * 2;
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
+      canvas.width = Math.max(1, Math.floor(w * dpr));
+      canvas.height = Math.max(1, Math.floor(h * dpr));
       canvas.style.width = w + "px";
       canvas.style.height = h + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       return { width: w, height: h, dpr: dpr };
     }
 
@@ -200,13 +206,23 @@
         height = size.height;
       }
 
+      var innerW = width - 2 * borderOffset;
+      var innerH = height - 2 * borderOffset;
+      if (innerW < 8 || innerH < 8) {
+        size = updateSize();
+        width = size.width;
+        height = size.height;
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+
       var deltaTime = (currentTime - lastFrameTime) / 1000;
       if (lastFrameTime > 0) time += deltaTime * opts.speed;
       lastFrameTime = currentTime;
 
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.strokeStyle = opts.color;
       ctx.lineWidth = 1;
       ctx.lineCap = "round";
@@ -215,12 +231,12 @@
       var scale = displacement;
       var left = borderOffset;
       var top = borderOffset;
-      var borderWidth = width - 2 * borderOffset;
-      var borderHeight = height - 2 * borderOffset;
+      var borderWidth = innerW;
+      var borderHeight = innerH;
       var maxRadius = Math.min(borderWidth, borderHeight) / 2;
       var radius = Math.min(opts.borderRadius, maxRadius);
       var approximatePerimeter = 2 * (borderWidth + borderHeight) + 2 * Math.PI * radius;
-      var sampleCount = Math.floor(approximatePerimeter / 2);
+      var sampleCount = Math.max(8, Math.floor(approximatePerimeter / 2));
 
       ctx.beginPath();
       for (var i = 0; i <= sampleCount; i++) {
@@ -265,11 +281,29 @@
       height = size.height;
     });
     resizeObserver.observe(el);
+    if (contentEl) resizeObserver.observe(contentEl);
+
+    contentEl.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener("load", function () {
+          size = updateSize();
+          width = size.width;
+          height = size.height;
+        });
+      }
+    });
 
     animationId = requestAnimationFrame(draw);
     el.dataset.electricMounted = "1";
 
+    function remeasure() {
+      size = updateSize();
+      width = size.width;
+      height = size.height;
+    }
+
     return {
+      remeasure: remeasure,
       destroy: function () {
         cancelAnimationFrame(animationId);
         resizeObserver.disconnect();
@@ -286,16 +320,37 @@
     });
   }
 
+  function remeasureElectricBorders() {
+    instances.forEach(function (inst) {
+      if (inst && inst.remeasure) inst.remeasure();
+    });
+  }
+
+  function bootElectricBorders() {
+    initElectricBorders();
+    remeasureElectricBorders();
+  }
+
   global.ITWAY_ElectricBorder = {
     init: initElectricBorders,
+    remeasure: remeasureElectricBorders,
     mount: createInstance,
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      initElectricBorders();
+  function scheduleBoot() {
+    bootElectricBorders();
+    requestAnimationFrame(function () {
+      requestAnimationFrame(remeasureElectricBorders);
     });
+    window.addEventListener("load", remeasureElectricBorders, { once: true });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(remeasureElectricBorders).catch(function () {});
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scheduleBoot);
   } else {
-    initElectricBorders();
+    scheduleBoot();
   }
 })(window);
